@@ -14,15 +14,21 @@ the gap between **"passed" and "true"**:
 This repo **only reads** committed artifacts from those two siblings. It never imports their
 code and never reimplements CSL/CLUE logic in TypeScript.
 
-## Status (2026-07-07)
+## Status (2026-07-08)
 
-**Design and plan exist; the app is NOT built yet.** Do not describe any component as done.
+**v1 is BUILT and gate-green.** All 17 plan tasks are implemented, reviewed, and the
+full pipeline passes: `npm run ingest && npm test && npm run build` — ingest "F1=0.9143",
+31 unit tests, static export to `out/`; `npm run e2e` = 3 Playwright tests green. The
+exported `out/index.html` carries the honest numbers (F1 0.9143, the train-partition
+caveat, COSMO 0.805-is-robustness, the correct-shaped lie), all provenance-driven.
 
-- **[built]** Design spec — `docs/superpowers/specs/2026-06-30-passed-vs-true-demo-design.md` (committed `3a30fbb`).
-- **[built]** v1 implementation plan — `docs/superpowers/plans/2026-07-07-passed-vs-true-demo.md`
-  (17 TDD tasks). **This is the source of truth for the build — follow it task by task.**
-- **[planned]** Everything else: scaffold, ingestion script, `lib/`, `components/`, `app/`, tests.
-  Nothing under those paths exists yet.
+- **[built]** Design spec — `docs/superpowers/specs/2026-06-30-passed-vs-true-demo-design.md`.
+- **[built]** v1 implementation plan — `docs/superpowers/plans/2026-07-07-passed-vs-true-demo.md` (17 TDD tasks).
+- **[built]** The app: `lib/` (types, csv, crosscheck), `scripts/ingest.ts` (+ `validateManifest`),
+  `components/` (ArtifactProvider + 10 components + Section), `app/` (page + api stub),
+  `public/data/*.json` (committed ingested snapshot), unit tests, `e2e/narrative.spec.ts`.
+- **[deferred]** Phase-2 live CSL path; a handful of DEFER-class polish notes are in the
+  build ledger (`.git/sdd/progress.md`, local/untracked).
 
 ## How it will work (per the plan)
 

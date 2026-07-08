@@ -1,4 +1,14 @@
-# Handoff — passed-vs-true-demo (v1 plan ready to build; CLAUDE.md added)
+# Handoff — passed-vs-true-demo (v1 BUILT and gate-green — 2026-07-08)
+
+> **UPDATE 2026-07-08 — v1 IS BUILT.** The plan below was executed in full (17/17 tasks,
+> subagent-driven-development). The app now exists (`lib/`, `scripts/ingest.ts`,
+> `components/`, `app/`, `public/data/*.json`, unit tests, `e2e/narrative.spec.ts`). Full
+> gate is controller-verified green: `npm run ingest && npm test && npm run build` (F1=0.9143,
+> 31 tests, static export) and `npm run e2e` (3 chromium tests). The exported `out/index.html`
+> carries the honest numbers, all provenance-driven. The **whole codebase is uncommitted** —
+> commit commands were handed to Hossain, grouped by concern. Everything under "Current state"
+> below described the pre-build plan and is retained for provenance; the `[not started]` app
+> bullet is now `[built]`.
 
 **Date:** 2026-07-07
 **Newest commit this brief describes:** `3a30fbb` (`docs: design spec for passed-vs-true-demo`) —
