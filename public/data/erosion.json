@@ -1,0 +1,26 @@
+[
+  {
+    "tier": "T0",
+    "catch_baseline": 1,
+    "catch_composition": 1,
+    "composition_advantage": 0,
+    "survived_baseline": 0,
+    "survived_composition": 0
+  },
+  {
+    "tier": "T1",
+    "catch_baseline": 0,
+    "catch_composition": 1,
+    "composition_advantage": 1,
+    "survived_baseline": 1,
+    "survived_composition": 0
+  },
+  {
+    "tier": "T2",
+    "catch_baseline": 0,
+    "catch_composition": 0,
+    "composition_advantage": 0,
+    "survived_baseline": 1,
+    "survived_composition": 1
+  }
+]

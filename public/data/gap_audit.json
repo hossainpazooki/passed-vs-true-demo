@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "risk": "**No held-out oracle** — the gate scores the detector against the *same* synthetic ground truth the generator planted; ACHIEVED = self-consistent, not \"works on real data\".",
+    "status": "✅ **Train oracle CLOSED** (real precisionFDA matrices vs the organizers' key, F1 0.914) · 🔶 **blind test oracle still gated**",
+    "commit": "c5c034e"
+  },
+  {
+    "id": 2,
+    "risk": "**Tune-on-test** — the default gate selected the decision threshold to maximize F1 on the *same* cohort it then graded.",
+    "status": "✅ **Honest framing; substance folded into #1**",
+    "commit": "201f55d"
+  },
+  {
+    "id": 3,
+    "risk": "**Shared scorer** — `fidelity_gate` reused the *exact* rank detector that `mislabel_detection` grades, so the construction-validity check shared the detector's blind spot.",
+    "status": "✅ **Fixed**",
+    "commit": "c5c034e"
+  },
+  {
+    "id": 4,
+    "risk": "**Evals gate nothing / training deploys ungated** — `mislabel_detection`/`fidelity_gate` were in no `IntentSpec`; `training` reached ACHIEVED on mere completion, then ran `pulumi up`.",
+    "status": "✅ **Fixed**",
+    "commit": "ecb490b"
+  },
+  {
+    "id": 5,
+    "risk": "**Seed-shopping** — caller-supplied `seed`/`mislabel_fraction`/sizes chose the cohort the gate judged.",
+    "status": "✅ **Fixed**",
+    "commit": "37fbd34"
+  },
+  {
+    "id": 6,
+    "risk": "**Go trusts the ML boolean** — the controller aggregated `result[\"passed\"]` without corroboration.",
+    "status": "✅ **Fixed (defense-in-depth)**",
+    "commit": "d216384"
+  },
+  {
+    "id": 7,
+    "risk": "**Knife-edge gate** — `test_clue_loop` sat at `target_f1=0.8`, flipping on float/BLAS noise.",
+    "status": "✅ **Fixed**",
+    "commit": "cbcb61f"
+  },
+  {
+    "id": 8,
+    "risk": "**Unauthenticated control plane** — controller API + `ml_service` had no app-layer auth; an anonymous request could reach `pulumi up`.",
+    "status": "✅ **Fixed**",
+    "commit": "283f8a8"
+  }
+]

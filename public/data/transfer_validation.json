@@ -1,0 +1,12 @@
+{
+  "f1": 0.9143,
+  "precision": 0.8421,
+  "recall": 1,
+  "tp": 16,
+  "fp": 3,
+  "fn": 0,
+  "threshold": "fixed-0.5",
+  "partition": "train",
+  "run": "Run 3",
+  "caveat": "train partition, not blind test — released train labels, not blind real-world performance. COSMO 0.805 is robustness, not validation."
+}

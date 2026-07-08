@@ -1,0 +1,38 @@
+{
+  "generatedFrom": {
+    "clue": "c446f82",
+    "csl": "30b287b"
+  },
+  "artifacts": {
+    "erosion.json": {
+      "sourceRepo": "correct-shaped-lies",
+      "filePath": "results/erosion.csv",
+      "commitSha": "30b287b"
+    },
+    "summary.json": {
+      "sourceRepo": "correct-shaped-lies",
+      "filePath": "results/summary.csv",
+      "commitSha": "30b287b"
+    },
+    "episodes.json": {
+      "sourceRepo": "correct-shaped-lies",
+      "filePath": "results/episodes.csv",
+      "commitSha": "30b287b"
+    },
+    "degradation_curve.png": {
+      "sourceRepo": "correct-shaped-lies",
+      "filePath": "results/degradation_curve.png",
+      "commitSha": "30b287b"
+    },
+    "transfer_validation.json": {
+      "sourceRepo": "upstream-label-correction",
+      "filePath": "docs/TRANSFER_VALIDATION_RUN.md",
+      "commitSha": "c446f82"
+    },
+    "gap_audit.json": {
+      "sourceRepo": "upstream-label-correction",
+      "filePath": "docs/GAP_AUDIT.md",
+      "commitSha": "c446f82"
+    }
+  }
+}
