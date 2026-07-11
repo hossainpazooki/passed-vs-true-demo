@@ -1,6 +1,6 @@
 {
   "generatedFrom": {
-    "clue": "c446f82",
+    "clue": "deca906",
     "csl": "30b287b"
   },
   "artifacts": {
@@ -27,12 +27,12 @@
     "transfer_validation.json": {
       "sourceRepo": "upstream-label-correction",
       "filePath": "docs/TRANSFER_VALIDATION_RUN.md",
-      "commitSha": "c446f82"
+      "commitSha": "deca906"
     },
     "gap_audit.json": {
       "sourceRepo": "upstream-label-correction",
       "filePath": "docs/GAP_AUDIT.md",
-      "commitSha": "c446f82"
+      "commitSha": "deca906"
     }
   }
 }
