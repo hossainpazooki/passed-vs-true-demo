@@ -1,1 +1,38 @@
 @import "tailwindcss";
+
+/* Academic reading layout for the /paper route (scoped to .paper). */
+.paper {
+  line-height: 1.65;
+}
+.paper h2 {
+  scroll-margin-top: 1rem;
+}
+.paper p {
+  text-wrap: pretty;
+}
+.paper code {
+  font-size: 0.85em;
+}
+
+/* Print / PDF: collaborators will want to save the paper. */
+@media print {
+  .print\:hidden,
+  nav {
+    display: none !important;
+  }
+  .paper {
+    max-width: none;
+    color: #000;
+  }
+  .paper aside[role="note"] {
+    border: 1px solid #999;
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .paper details {
+    display: block;
+  }
+  .paper details > summary {
+    list-style: none;
+  }
+}
