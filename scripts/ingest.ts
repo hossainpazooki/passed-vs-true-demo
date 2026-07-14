@@ -8,6 +8,14 @@ import type {
 const CSL = "../correct-shaped-lies";
 const CLUE = "../upstream-label-correction";
 
+// Deliberately pinned sibling commits (Invariant #6). `main()` fails loudly if a
+// sibling's HEAD has drifted from these, instead of silently re-stamping the
+// provenance badge — bump a value here only after reviewing what changed.
+const PINNED_SHA: Record<"clue" | "csl", string> = {
+  clue: "deca906",
+  csl: "30b287b",
+};
+
 const P = {
   erosion: `${CSL}/results/erosion.csv`,
   summary: `${CSL}/results/summary.csv`,
@@ -134,7 +142,18 @@ async function main() {
   const { execSync } = await import("node:child_process");
   const realFs: IngestFs = {
     read: (p) => readFileSync(p, "utf8"),
-    sha: (repo) => execSync(`git -C ${repo === "clue" ? CLUE : CSL} rev-parse --short HEAD`).toString().trim(),
+    sha: (repo) => {
+      const dir = repo === "clue" ? CLUE : CSL;
+      const head = execSync(`git -C ${dir} rev-parse --short HEAD`).toString().trim();
+      const pinned = PINNED_SHA[repo];
+      if (head !== pinned) {
+        throw new Error(
+          `${repo} HEAD (${head}) has drifted from the pinned sha (${pinned}). ` +
+          `Review what changed in ${dir}, then update PINNED_SHA in scripts/ingest.ts deliberately.`,
+        );
+      }
+      return head;
+    },
   };
   const bundle = buildBundle(realFs);
   validateManifest(bundle);

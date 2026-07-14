@@ -3,7 +3,7 @@
 A standalone Next.js **static site** that demos two sibling repos as **one argument** about
 the gap between **"passed" and "true"**:
 
-- **CLUE** (`../upstream-label-correction`, pinned `c446f82`) — constructive side: a closed loop
+- **CLUE** (`../upstream-label-correction`, pinned `deca906`) — constructive side: a closed loop
   that scores a label-error detector against ground truth. Headline artifact: transfer-validation
   **F1 0.9143** (precision 0.8421, recall 1.0000; TP 16 / FP 3 / FN 0), precisionFDA **train**
   partition — *not* blind real-world performance.
@@ -76,3 +76,7 @@ the CLUE `../upstream-label-correction/web/` ecosystem.
   commands to Hossain. The two sibling repos are **inputs, pinned by SHA** — never modify them from here.
 - The sibling repos may have unrelated uncommitted files; that is fine as long as the pinned
   artifacts (`results/*.csv`, the two CLUE docs) are unchanged. Re-pin deliberately if you bump a SHA.
+- **Pin is enforced, not just documented.** `scripts/ingest.ts` hard-codes `PINNED_SHA` and
+  `main()` throws (build fails) if a sibling's actual git HEAD no longer matches it — a sibling
+  commit can no longer silently move the provenance badge. Bump `PINNED_SHA` here (and the header
+  above) only after deliberately reviewing what changed upstream.
