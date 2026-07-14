@@ -30,12 +30,12 @@ export function PaperBody() {
           Measuring the Detection Limit of Lifecycle-State Oversight Against Knowledge-Graded
           Adversaries
         </h1>
+        {/* Solo-authored for now; add co-authors here (e.g. Algoverse cohort / mentor) before formal submission if applicable. */}
         <p className="mt-3 text-sm">
-          Hossain Pazooki<sup>1</sup>,{" "}
-          <span className="text-neutral-500">[co-authors — Algoverse cohort / mentor]</span>
+          Hossain Pazooki<sup>1</sup>
         </p>
         <p className="text-sm text-neutral-500">
-          <sup>1</sup>[affiliation — Algoverse AI Research Fellowship] ·{" "}
+          <sup>1</sup>Algoverse AI Research Fellowship ·{" "}
           <a href="mailto:hossain@pazooki.com" className="underline decoration-dotted">
             hossain@pazooki.com
           </a>
